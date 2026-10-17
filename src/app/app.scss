@@ -1,0 +1,14 @@
+.main-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: #FCFCFF;
+
+    @media (max-width: 768px) {
+        padding: 16px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,17 @@
+.app-header {
+    width: 100%;
+    background-color: var(--mat-sys-primary-container);
+
+    .app-toolbar {
+        max-width: 1440px;
+        margin: 0 auto;
+
+        mat-icon {
+            color: var(--mat-sys-on-primary-container);
+        }
+    }
+}
+
+.app-toolbar__spacer {
+    flex: 1 1 auto;
+}
