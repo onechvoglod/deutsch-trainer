@@ -6,6 +6,11 @@
         max-width: 1440px;
         margin: 0 auto;
 
+        .app-toolbar__title {
+            text-decoration: none;
+            color: inherit;
+        }
+
         mat-icon {
             color: var(--mat-sys-on-primary-container);
         }

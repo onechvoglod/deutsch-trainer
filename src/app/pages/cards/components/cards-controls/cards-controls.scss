@@ -1,0 +1,28 @@
+.cards__controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.cards__pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cards__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    color: #174ea6;
+    font-size: 15px;
+}
+
+.cards__number--active {
+    background-color: #d6e2ff;
+    color: #174ea6;
+    font-weight: 600;
+}
