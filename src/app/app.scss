@@ -2,8 +2,8 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 24px;
-    background-color: #FCFCFF;
     height: 100%;
+    background-color: var(--mat-sys-surface);
 
     @media (max-width: 768px) {
         padding: 16px;

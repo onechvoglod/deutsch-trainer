@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, OnDestroy, OnInit, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardTitle } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -31,11 +31,9 @@ export class Cards {
     { de: 'Können Sie mir bitte helfen?', translatedText: 'Не могли бы Вы мне помочь?' },
   ];
   readonly cardIndex = signal(0);
-
   readonly currentCard = computed(
     () => this.cards[this.cardIndex()]
   );
-
   readonly visibleCardNumbers = computed(() => {
     const index = this.cardIndex();
     const total = this.cards.length;
@@ -49,16 +47,10 @@ export class Cards {
       (_, position) => start + position + 1
     )
   });
+  protected readonly speechAvailable = signal(false);
 
   showTranslation(): void {
     this.showAnswer.update(value => !value);
-  }
-
-  protected speakWord(event: MouseEvent, word: string): void {
-    event.stopPropagation();
-    const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = 'de-DE';
-    speechSynthesis.speak(utterance);
   }
 
   nextCard(): void {
@@ -73,5 +65,14 @@ export class Cards {
       this.cardIndex.update(value => value - 1);
       this.showAnswer.set(false);
     }
+  }
+
+  protected speakWord(event: MouseEvent, word: string): void {
+    event.stopPropagation();
+
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'de-DE';
+
+    speechSynthesis.speak(utterance);
   }
 }
