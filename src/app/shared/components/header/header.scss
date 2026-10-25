@@ -5,6 +5,7 @@
     .app-toolbar {
         max-width: 1440px;
         margin: 0 auto;
+        gap: 16px;
 
         .app-toolbar__brand {
             display: contents;
@@ -28,7 +29,6 @@
     background-color: #ffffff;
     color: inherit;
     border-radius: 50%;
-    margin-left: 16px;
 }
 
 .app-header__user-name {

@@ -46,8 +46,143 @@ export class Cards {
     {
       de: 'Zusammenfassend kann ich sagen, dass eine gute Vorbereitung und ein freundliches Auftreten entscheidend für ein erfolgreiches Bewerbungsgespräch sind.',
       translatedText: 'Подводя итог, могу сказать, что хорошая подготовка и приветливое поведение имеют решающее значение для успешного собеседования.'
-    }
-  ];
+    },
+    {
+      de: 'Wir haben momentan ein Problem mit der Lieferung.',
+      translatedText: 'В данный момент у нас проблема с поставкой.'
+    },
+    {
+      de: 'Wir müssen unbedingt eine Lösung finden.',
+      translatedText: 'Нам обязательно нужно найти решение.'
+    },
+    {
+      de: 'Wir sollten gemeinsam überlegen, wie wir das Problem lösen können.',
+      translatedText: 'Нам следует вместе подумать, как мы можем решить эту проблему.'
+    },
+    {
+      de: 'Hast du schon eine Idee, wie wir das Problem lösen könnten?',
+      translatedText: 'У тебя уже есть идея, как мы могли бы решить эту проблему?'
+    },
+    {
+      de: 'Ich schlage vor, dass wir zuerst mit dem Team sprechen.',
+      translatedText: 'Я предлагаю сначала поговорить с командой.'
+    },
+    {
+      de: 'Wir könnten vielleicht einen Plan erstellen.',
+      translatedText: 'Мы могли бы, возможно, составить план.'
+    },
+    {
+      de: 'Was hältst du davon, wenn wir morgen eine Besprechung organisieren?',
+      translatedText: 'Что ты думаешь о том, если мы завтра организуем собрание?'
+    },
+    {
+      de: 'Meiner Meinung nach wäre es sinnvoll, die Mitarbeiter besser zu informieren.',
+      translatedText: 'По моему мнению, было бы разумно лучше информировать сотрудников.'
+    },
+    {
+      de: 'Eine weitere Möglichkeit wäre, einen Plan zu erstellen.',
+      translatedText: 'Ещё одной возможностью было бы составить план.'
+    },
+    {
+      de: 'Das ist eine gute Idee.',
+      translatedText: 'Это хорошая идея.'
+    },
+    {
+      de: 'Da stimme ich dir vollkommen zu.',
+      translatedText: 'Я с тобой полностью согласен.'
+    },
+    {
+      de: 'Das sehe ich genauso.',
+      translatedText: 'Я считаю точно так же.'
+    },
+    {
+      de: 'Damit bin ich einverstanden.',
+      translatedText: 'Я с этим согласен.'
+    },
+    {
+      de: 'Das klingt nach einer guten Lösung.',
+      translatedText: 'Это звучит как хорошее решение.'
+    },
+    {
+      de: 'Ich bin mir nicht sicher, ob das eine gute Lösung ist.',
+      translatedText: 'Я не уверен, что это хорошее решение.'
+    },
+    {
+      de: 'Das könnte funktionieren, aber wir sollten auch bedenken, dass wir wenig Zeit haben.',
+      translatedText: 'Это могло бы сработать, но нам также следует учитывать, что у нас мало времени.'
+    },
+    {
+      de: 'Ich verstehe deinen Vorschlag, aber ich würde lieber zuerst mit dem Team sprechen.',
+      translatedText: 'Я понимаю твоё предложение, но предпочёл бы сначала поговорить с командой.'
+    },
+    {
+      de: 'Vielleicht wäre es besser, wenn wir zuerst die Ursache finden.',
+      translatedText: 'Возможно, было бы лучше, если бы мы сначала нашли причину.'
+    },
+    {
+      de: 'Zuerst sollten wir herausfinden, warum das Problem entstanden ist.',
+      translatedText: 'Сначала нам следует выяснить, почему возникла проблема.'
+    },
+    {
+      de: 'Vielleicht liegt das Problem daran, dass wir zu wenig Personal haben.',
+      translatedText: 'Возможно, проблема заключается в том, что у нас слишком мало персонала.'
+    },
+    {
+      de: 'Wir sollten mit den Mitarbeitern sprechen, um die Ursache zu finden.',
+      translatedText: 'Нам следует поговорить с сотрудниками, чтобы найти причину.'
+    },
+    {
+      de: 'Wer könnte sich darum kümmern?',
+      translatedText: 'Кто мог бы этим заняться?'
+    },
+    {
+      de: 'Ich könnte diese Aufgabe übernehmen.',
+      translatedText: 'Я мог бы взять на себя эту задачу.'
+    },
+    {
+      de: 'Könntest du dich darum kümmern?',
+      translatedText: 'Ты мог бы этим заняться?'
+    },
+    {
+      de: 'Wir sollten die Aufgaben untereinander aufteilen.',
+      translatedText: 'Нам следует распределить задачи между собой.'
+    },
+    {
+      de: 'Dann machen wir das so.',
+      translatedText: 'Тогда так и сделаем.'
+    },
+    {
+      de: 'Wir haben also vereinbart, dass wir morgen eine Besprechung organisieren.',
+      translatedText: 'Итак, мы договорились, что завтра организуем собрание.'
+    },
+    {
+      de: 'Ich denke, damit haben wir eine gute Lösung gefunden.',
+      translatedText: 'Я думаю, таким образом мы нашли хорошее решение.'
+    },
+    {
+      de: 'Wir sollten in einer Woche überprüfen, ob sich die Situation verbessert hat.',
+      translatedText: 'Нам следует через неделю проверить, улучшилась ли ситуация.'
+    },
+    {
+      de: 'Wir haben momentan ein Problem mit der Lieferung. Wir müssen eine Lösung finden.',
+      translatedText: 'В данный момент у нас проблема с поставкой. Нам нужно найти решение.'
+    },
+    {
+      de: 'Ich schlage vor, dass wir mit dem Team sprechen. Was hältst du davon?',
+      translatedText: 'Я предлагаю поговорить с командой. Что ты об этом думаешь?'
+    },
+    {
+      de: 'Das ist eine gute Idee. Außerdem könnten wir einen Plan erstellen.',
+      translatedText: 'Это хорошая идея. Кроме того, мы могли бы составить план.'
+    },
+    {
+      de: 'Wer könnte sich darum kümmern? Und wann sollten wir das machen?',
+      translatedText: 'Кто мог бы этим заняться? И когда нам следует это сделать?'
+    },
+    {
+      de: 'Dann machen wir das so. Ich kümmere mich um die Besprechung und du übernimmst die Planung.',
+      translatedText: 'Тогда так и сделаем. Я займусь собранием, а ты возьмёшь на себя планирование.'
+    }];
   readonly cardIndex = signal(0);
   readonly currentCard = computed(
     () => this.cards[this.cardIndex()]

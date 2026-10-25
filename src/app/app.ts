@@ -8,6 +8,4 @@ import { Header } from './shared/components/header/header';
   styleUrl: './app.scss',
   templateUrl: './app.html',
 })
-export class App {
-  protected readonly title = signal('deutsch-trainer');
-}
+export class App { }
