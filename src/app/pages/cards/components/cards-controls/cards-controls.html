@@ -1,6 +1,6 @@
 <div class="cards__controls">
     <button matFab extended [disabled]="cardIndex() === 0" (click)="previous.emit()">
-        Назад
+        Zurück
     </button>
     <div class="cards__pagination">
         @for (number of visibleCardNumbers(); track number) {
@@ -10,6 +10,6 @@
         }
     </div>
     <button matFab extended [disabled]="cardIndex() === totalCards() - 1" (click)="next.emit()">
-        Вперёд
+        Weiter
     </button>
 </div>

@@ -4,5 +4,27 @@
             <img src="/images/logo.png" alt="Deutsch Trainer" class="app-toolbar__logo" />
             <span class="app-toolbar__title">Deutsch Trainer</span>
         </a>
+        <span class="app-header__spacer"></span>
+        @if (authService.user(); as user) {
+        <span class="app-header__user-name">{{user.displayName ?? 'Benutzer'}}</span>
+        } @else {
+        <span class="app-header__user-name">Gast</span>
+        }
+        <button mat-icon-button class="header__account-button" [matMenuTriggerFor]="accountMenu">
+            <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu #accountMenu="matMenu" xPosition="before">
+            @if (authService.user()) {
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Abmelden</span>
+            </button>
+            } @else {
+            <button mat-menu-item (click)="login()">
+                <mat-icon>login</mat-icon>
+                <span>Mit Google anmelden</span>
+            </button>
+            }
+        </mat-menu>
     </mat-toolbar>
 </header>
