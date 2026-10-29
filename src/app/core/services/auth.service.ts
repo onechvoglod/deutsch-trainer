@@ -20,6 +20,16 @@ export class AuthService implements OnDestroy {
     return signInWithPopup(auth, provider);
   }
 
+  async getIdToken(): Promise<string> {
+    const user = this.currentUser();
+
+    if (!user) {
+      throw new Error('User is not authenticated');
+    }
+
+    return user.getIdToken();
+  }
+
   logout() {
     return signOut(auth);
   }

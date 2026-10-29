@@ -1,22 +1,42 @@
 <section class="cards">
+    @if (!authService.ready() || loading()) {
+    <p>Karten werden geladen …</p>
+    } @else if (errorMessage()) {
+    <p>{{ errorMessage() }}</p>
+    } @else if (currentCard(); as card) {
     <div class="cards__scene">
         <mat-card class="cards-card" [class.cards-card--flipped]="showAnswer()" (click)="showTranslation()">
             <div class="cards-card__face cards-card__front">
                 <mat-card-title class="cards-card__title">
-                    {{cards[cardIndex()].de}}
+                    {{ card.de }}
                 </mat-card-title>
-                <button matIconButton type="button" class="cards__sound"
-                    (click)="speakWord($event, cards[cardIndex()].de)">
+
+                @if (card.example) {
+                <p class="cards-card__example">{{ card.example }}</p>
+                }
+
+                <button matIconButton type="button" class="cards__sound" aria-label="Vorlesen"
+                    (click)="speakWord($event, card.de)">
                     <mat-icon>volume_up</mat-icon>
                 </button>
             </div>
+
             <div class="cards-card__face cards-card__back">
                 <mat-card-title class="cards-card__title">
-                    {{cards[cardIndex()].translatedText}}
+                    {{ card.translatedText }}
                 </mat-card-title>
+                @if (card.exampleTranslation) {
+                <p class="cards-card__example">
+                    {{ card.exampleTranslation }}
+                </p>
+                }
             </div>
         </mat-card>
     </div>
+
     <app-cards-controls [cardIndex]="cardIndex()" [visibleCardNumbers]="visibleCardNumbers()"
-        [totalCards]="cards.length" (previous)="prevCard()" (next)="nextCard()" />
+        [totalCards]="cards().length" (previous)="prevCard()" (next)="nextCard()" />
+    } @else {
+    <p>Du hast noch keine Karten.</p>
+    }
 </section>
