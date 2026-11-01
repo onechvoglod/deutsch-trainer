@@ -1,6 +1,6 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCard, MatCardTitle } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { CardsControls } from './components/cards-controls/cards-controls';
 import { CardsService } from '../../features/cards/cards.service';
@@ -8,8 +8,7 @@ import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   imports: [
-    MatCard,
-    MatCardTitle,
+    MatCardModule,
     MatButtonModule,
     MatIconModule,
     CardsControls

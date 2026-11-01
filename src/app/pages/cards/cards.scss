@@ -16,6 +16,7 @@
             cursor: pointer;
             transform-style: preserve-3d;
             transition: transform 600ms ease-in-out;
+            background-color: var(--mat-sys-surface-container-lowest);
 
             &--flipped {
                 transform: rotateY(180deg);
@@ -24,16 +25,16 @@
             &__face {
                 grid-area: 1 / 1;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                gap: 16px;
                 padding: 24px;
                 backface-visibility: hidden;
                 -webkit-backface-visibility: hidden;
             }
 
             &__back {
-                background-color: #e0f2fe;
-                color: #164e75;
                 transform: rotateY(180deg);
             }
         }
@@ -42,4 +43,9 @@
 
 .cards__sound {
     color: #174ea6;
+}
+
+.cards-card__title {
+    display: flex;
+    align-items: center;
 }

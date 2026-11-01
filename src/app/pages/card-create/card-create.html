@@ -1,0 +1,36 @@
+<section class="card-create">
+    <button matButton="outlined" class="card-create__back-button">
+        <mat-icon class="card-create__back-icon">arrow_left_alt</mat-icon>
+        Zurück zu den Karten
+    </button>
+    <h1 class="card-create__title">Neue Karte</h1>
+    <p class="card-create__description">Erstelle eine Karte mit einem Wort oder einem ganzen Satz</p>
+    <mat-card class="card-create__card">
+        <mat-card-content>
+            <form [formRoot]="cardForm" class="card-create__form" action="">
+                <mat-form-field class="card-create__form-field" appearance="outline">
+                    <mat-label>Deutsch</mat-label>
+                    <textarea [formField]="cardForm.de" matInput></textarea>
+                </mat-form-field>
+                <mat-form-field class="card-create__form-field" appearance="outline">
+                    <mat-label>Übersetzung</mat-label>
+                    <textarea [formField]="cardForm.translatedText" matInput></textarea>
+                </mat-form-field>
+                <p class="card-create__subtitle">Beispiel (optional)</p>
+                <mat-form-field class="card-create__form-field" appearance="outline">
+                    <mat-label>Beispielsatz</mat-label>
+                    <textarea [formField]="cardForm.example" matInput></textarea>
+                </mat-form-field>
+                <mat-form-field class="card-create__form-field" appearance="outline">
+                    <mat-label>Übersetzung des Beispiels</mat-label>
+                    <textarea [formField]="cardForm.exampleTranslation" matInput></textarea>
+                </mat-form-field>
+                <mat-card-actions class="card-create__actions" align="end">
+                    <span class="card-create__required">* Pflichtfelder</span>
+                    <button matButton>Abbrechen</button>
+                    <button type="submit" matButton="filled"><mat-icon>add_2</mat-icon> Erstellen</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</section>

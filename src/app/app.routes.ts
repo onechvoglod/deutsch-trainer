@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Cards } from './pages/cards/cards';
 import { NotFound } from './pages/not-found/not-found';
+import { CardCreate } from './pages/card-create/card-create';
 
 export const routes: Routes = [
     {
@@ -13,6 +14,11 @@ export const routes: Routes = [
         path: 'cards',
         component: Cards,
         title: 'Lernkarten | Deutsch Trainer',
+    },
+    {
+        path: 'card-create',
+        component: CardCreate,
+        title: 'Neue Karte | Deutsch Trainer ',
     },
     {
         path: '**',

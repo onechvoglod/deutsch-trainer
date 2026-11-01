@@ -3,7 +3,7 @@ import { inject, Service } from '@angular/core';
 import { from, map, Observable, switchMap, throwError } from 'rxjs';
 import { firebaseConfig } from '../../config/firebase.config';
 import { AuthService } from '../../core/services/auth.service';
-import { FirestoreCardsResponse, VocabularyCard } from './cards.models';
+import { CreateCardData, FirestoreCardDocument, FirestoreCardsResponse, VocabularyCard } from './cards.models';
 
 @Service()
 export class CardsService {
@@ -51,6 +51,52 @@ export class CardsService {
                         };
                     }
                 )
+            )
+        );
+    }
+
+    createCard(data: CreateCardData): Observable<FirestoreCardDocument> {
+        const user = this.authService.user();
+
+        if (!user) {
+            return throwError(() => new Error('User is not authenticated'));
+        }
+
+        const url = `${this.baseUrl}/users/${user.uid}/cards`;
+
+        const body = {
+            fields: {
+                de: {
+                    stringValue: data.de,
+                },
+                translatedText: {
+                    stringValue: data.translatedText,
+                },
+                ...(data.example
+                    ? { example: { stringValue: data.example } }
+                    : {}),
+                ...(data.exampleTranslation
+                    ? { exampleTranslation: { stringValue: data.exampleTranslation } }
+                    : {}),
+                status: {
+                    stringValue: 'new',
+                },
+                nextReviewAt: {
+                    nullValue: null,
+                },
+                correctStreak: {
+                    integerValue: '0',
+                },
+            },
+        };
+
+        return from(this.authService.getIdToken()).pipe(
+            switchMap(token =>
+                this.http.post<FirestoreCardDocument>(url, body, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
             )
         );
     }

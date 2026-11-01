@@ -26,3 +26,10 @@ export interface FirestoreCardsResponse {
     documents?: FirestoreCardDocument[];
     nextPageToken?: string;
 }
+
+export interface CreateCardData {
+    de: string;
+    translatedText: string;
+    example?: string;
+    exampleTranslation?: string;
+}

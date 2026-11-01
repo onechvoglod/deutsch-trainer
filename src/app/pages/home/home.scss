@@ -1,20 +1,27 @@
 .home {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 320px));
     justify-content: center;
-    align-items: center;
+    gap: 24px;
+}
+
+@media (max-width: 700px) {
+    .home-cards {
+        grid-template-columns: minmax(0, 320px);
+    }
 }
 
 .home-card {
     width: 100%;
     max-width: 320px;
     min-height: 160px;
-    margin: 0 auto;
     padding: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 24px;
     text-align: center;
+    gap: 8px;
     background-color: var(--mat-sys-surface-container-lowest);
     color: var(--mat-sys-on-primary-container);
 }

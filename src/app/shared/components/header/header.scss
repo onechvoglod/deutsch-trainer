@@ -1,4 +1,8 @@
 .app-header {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     width: 100%;
     background-color: var(--mat-sys-primary-container);
 
@@ -32,6 +36,16 @@
 }
 
 .app-header__user-name {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 12px;
+    color: var(--mat-sys-on-surface);
     font-size: 16px;
     font-weight: 500;
+    cursor: default;
+}
+
+.app-header__menu-divider {
+    margin: 0 8px;
 }

@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   imports: [
@@ -13,6 +14,7 @@ import { AuthService } from '../../../core/services/auth.service';
     MatIconModule,
     RouterLink,
     MatMenuModule,
+    MatDividerModule
   ],
   selector: 'app-header',
   styleUrl: './header.scss',
