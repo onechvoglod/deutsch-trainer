@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 700px) {
-    .home-cards {
+    .home {
         grid-template-columns: minmax(0, 320px);
     }
 }

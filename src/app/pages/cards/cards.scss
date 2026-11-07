@@ -13,7 +13,6 @@
             grid-template-columns: minmax(0, 1fr);
             width: 100%;
             min-height: 222px;
-            cursor: pointer;
             transform-style: preserve-3d;
             transition: transform 600ms ease-in-out;
             background-color: var(--mat-sys-surface-container-lowest);
@@ -32,6 +31,8 @@
                 padding: 24px;
                 backface-visibility: hidden;
                 -webkit-backface-visibility: hidden;
+                position: relative;
+                padding-bottom: 80px;
             }
 
             &__back {
@@ -48,4 +49,21 @@
 .cards-card__title {
     display: flex;
     align-items: center;
+}
+
+.cards__flip-button {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+
+    width: 56px;
+    height: 56px;
+    padding: 12px;
+    color: var(--mat-sys-primary);
+
+    mat-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 32px;
+    }
 }

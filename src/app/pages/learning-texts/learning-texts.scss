@@ -1,0 +1,46 @@
+.learning-texts {
+    margin: 0 auto;
+    max-width: 780px;
+}
+
+.learning-texts__header {
+    height: auto;
+    padding: 20px 24px;
+
+    &.mat-expanded {
+        height: auto;
+    }
+}
+
+.learning-texts__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.learning-texts__title {
+    font: var(--mat-sys-title-large);
+    letter-spacing: var(--mat-sys-title-large-tracking);
+    text-align: center;
+    color: var(--mat-sys-on-surface);
+}
+
+.learning-texts__description {
+    font: var(--mat-sys-body-large);
+    letter-spacing: var(--mat-sys-body-large-tracking);
+    // text-align: left;
+    color: var(--mat-sys-on-surface-variant);
+}
+
+.learning-texts__text {
+    font: var(--mat-sys-body-large);
+    letter-spacing: var(--mat-sys-body-large-tracking);
+    color: var(--mat-sys-on-surface);
+    padding-top: 8px;
+    border-top: 1px solid var(--mat-sys-primary-container);
+    white-space: pre-line;
+}
+
+.learning-texts__panel {
+    background-color: var(--mat-sys-surface-container-lowest);
+}

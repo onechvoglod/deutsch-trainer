@@ -1,0 +1,29 @@
+@if (loading()) {
+<p>Texte werden geladen…</p>
+} @else if (errorMessage()) {
+<p>{{ errorMessage() }}</p>
+} @else {
+<section class="learning-texts">
+    <mat-accordion>
+        @for (item of learningTexts(); track item.id) {
+        <mat-expansion-panel class="learning-texts__panel">
+            <mat-expansion-panel-header class="learning-texts__header">
+                <mat-panel-title class="learning-texts__heading">
+                    <span class="learning-texts__title">
+                        {{ item.title }}
+                    </span>
+                    <span class="learning-texts__description">
+                        {{ item.description }}
+                    </span>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="learning-texts__text">
+                {{item.text}}
+            </p>
+        </mat-expansion-panel>
+        } @empty {
+        <p>Noch keine Texte vorhanden.</p>
+        }
+    </mat-accordion>
+</section>
+}

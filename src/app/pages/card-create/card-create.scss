@@ -65,3 +65,7 @@
     letter-spacing: var(--mat-sys-headline-small-tracking);
     color: var(--mat-sys-secondary);
 }
+
+.card-create__required--error {
+    color: var(--mat-sys-error);
+}

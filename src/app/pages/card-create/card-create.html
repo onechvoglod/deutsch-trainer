@@ -25,8 +25,12 @@
                     <mat-label>Übersetzung des Beispiels</mat-label>
                     <textarea [formField]="cardForm.exampleTranslation" matInput></textarea>
                 </mat-form-field>
+                <span class="card-create__required" [class.card-create__required--error]="
+                        (cardForm.de().touched() && !!cardForm.de().getError('required')) ||
+                        (cardForm.translatedText().touched() && !!cardForm.translatedText().getError('required'))">
+                    * Pflichtfelder
+                </span>
                 <mat-card-actions class="card-create__actions" align="end">
-                    <span class="card-create__required">* Pflichtfelder</span>
                     <button matButton>Abbrechen</button>
                     <button type="submit" matButton="filled"><mat-icon>add_2</mat-icon> Erstellen</button>
                 </mat-card-actions>

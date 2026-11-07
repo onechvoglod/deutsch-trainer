@@ -5,7 +5,7 @@
     <p>{{ errorMessage() }}</p>
     } @else if (currentCard(); as card) {
     <div class="cards__scene">
-        <mat-card class="cards-card" [class.cards-card--flipped]="showAnswer()" (click)="showTranslation()">
+        <mat-card class="cards-card" [class.cards-card--flipped]="showAnswer()">
             <div class="cards-card__face cards-card__front">
                 <mat-card-title class="cards-card__title">
                     {{ card.de }}
@@ -19,9 +19,10 @@
                     <p class="cards-card__example">{{ card.example }}</p>
                     }
                 </mat-card-content>
+                <button matIconButton class="cards__flip-button" (click)="showTranslation()">
+                    <mat-icon>flip_camera_android</mat-icon>
+                </button>
             </div>
-
-
 
             <div class="cards-card__face cards-card__back">
                 <mat-card-title class="cards-card__title">
@@ -32,6 +33,9 @@
                     {{ card.exampleTranslation }}
                 </p>
                 }
+                <button matIconButton class="cards__flip-button" (click)="showTranslation()">
+                    <mat-icon>flip_camera_android</mat-icon>
+                </button>
             </div>
         </mat-card>
     </div>
