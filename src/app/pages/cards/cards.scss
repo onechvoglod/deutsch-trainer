@@ -42,10 +42,6 @@
     }
 }
 
-.cards__sound {
-    color: #174ea6;
-}
-
 .cards-card__title {
     display: flex;
     align-items: center;
@@ -66,4 +62,22 @@
         height: 32px;
         font-size: 32px;
     }
+}
+
+.learning-texts__language-toggle {
+    max-width: 754px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 24px;
+
+    .language-toggle__button {
+        flex: 1 1 0;
+    }
+}
+
+.language-toggle__content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }

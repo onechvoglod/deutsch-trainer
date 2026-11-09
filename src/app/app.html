@@ -1,4 +1,10 @@
-<app-header></app-header>
+<div class="app-header-wrapper">
+    <app-header />
+
+    @if (navigating()) {
+    <mat-progress-bar class="app-navigation-progress" mode="indeterminate" aria-label="Seite wird geladen" />
+    }
+</div>
 <main class="main-container">
     <router-outlet />
 </main>

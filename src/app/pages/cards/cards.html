@@ -1,25 +1,41 @@
 <section class="cards">
     @if (!authService.ready() || loading()) {
-    <p>Karten werden geladen …</p>
+    <app-spinner></app-spinner>
     } @else if (errorMessage()) {
     <p>{{ errorMessage() }}</p>
     } @else if (currentCard(); as card) {
+    <mat-button-toggle-group class="learning-texts__language-toggle" aria-label="Sprache auswählen"
+        [value]="initialLanguage()" (change)="changeInitialLanguage($event.value)"
+        [hideSingleSelectionIndicator]="true">
+        <mat-button-toggle class="language-toggle__button" value="de">
+            <span class="language-toggle__content">
+                @if (initialLanguage() === 'de') {
+                <mat-icon aria-hidden="true">check</mat-icon>
+                }
+                <span>Deutsch</span>
+            </span>
+        </mat-button-toggle>
+        <mat-button-toggle class="language-toggle__button" value="translation">
+            <span class="language-toggle__content">
+                @if (initialLanguage() === 'translation') {
+                <mat-icon aria-hidden="true">check</mat-icon>
+                }
+                <span>Deine Sprache</span>
+            </span>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
     <div class="cards__scene">
-        <mat-card class="cards-card" [class.cards-card--flipped]="showAnswer()">
+        <mat-card class="cards-card" [class.cards-card--flipped]="showTranslation()">
             <div class="cards-card__face cards-card__front">
                 <mat-card-title class="cards-card__title">
                     {{ card.de }}
-                    <button matIconButton type="button" class="cards__sound" aria-label="Vorlesen"
-                        (click)="speakWord($event, card.de)">
-                        <mat-icon>volume_up</mat-icon>
-                    </button>
                 </mat-card-title>
                 <mat-card-content>
                     @if (card.example) {
                     <p class="cards-card__example">{{ card.example }}</p>
                     }
                 </mat-card-content>
-                <button matIconButton class="cards__flip-button" (click)="showTranslation()">
+                <button matIconButton class="cards__flip-button" (click)="flipCard()">
                     <mat-icon>flip_camera_android</mat-icon>
                 </button>
             </div>
@@ -33,7 +49,7 @@
                     {{ card.exampleTranslation }}
                 </p>
                 }
-                <button matIconButton class="cards__flip-button" (click)="showTranslation()">
+                <button matIconButton class="cards__flip-button" (click)="flipCard()">
                     <mat-icon>flip_camera_android</mat-icon>
                 </button>
             </div>

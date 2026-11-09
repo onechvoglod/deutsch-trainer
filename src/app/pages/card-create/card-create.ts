@@ -8,6 +8,7 @@ import { form, required, FormRoot, FormField } from '@angular/forms/signals';
 import { firstValueFrom } from 'rxjs';
 import { CardsService } from '../../features/cards/cards.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { RouterLink } from '@angular/router';
 
 @Component({
   imports: [
@@ -20,7 +21,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatLabel,
     MatCardActions,
     FormRoot,
-    FormField
+    FormField,
+    RouterLink
   ],
   selector: 'app-card-create',
   styleUrl: './card-create.scss',

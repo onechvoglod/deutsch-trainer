@@ -1,6 +1,7 @@
 .home {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 320px));
+    grid-auto-rows: 1fr;
     justify-content: center;
     gap: 24px;
 }
@@ -34,6 +35,7 @@
 }
 
 .home-card-link {
+    display: flex;
     width: 100%;
     text-decoration: none;
     color: inherit;

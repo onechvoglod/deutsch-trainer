@@ -5,20 +5,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { CardsControls } from './components/cards-controls/cards-controls';
 import { CardsService } from '../../features/cards/cards.service';
 import { AuthService } from '../../core/services/auth.service';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { Spinner } from '../../shared/components/spinner/spinner';
 
 @Component({
   imports: [
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    CardsControls
+    CardsControls,
+    MatButtonToggleModule,
+    Spinner
   ],
   selector: 'app-cards',
   styleUrl: './cards.scss',
   templateUrl: './cards.html',
 })
 export class Cards {
-  protected readonly showAnswer = signal(false);
+  protected readonly showTranslation = signal(false);
   protected cardsService = inject(CardsService);
   protected readonly authService = inject(AuthService);
   protected readonly loading = signal(false);
@@ -41,7 +45,7 @@ export class Cards {
       (_, position) => start + position + 1
     )
   });
-  protected readonly speechAvailable = signal(false);
+  protected readonly initialLanguage = signal<'de' | 'translation'>('de');
 
   constructor() {
     effect(onCleanup => {
@@ -50,7 +54,7 @@ export class Cards {
 
       this.cards.set([]);
       this.cardIndex.set(0);
-      this.showAnswer.set(false);
+      this.showTranslation.set(false);
       this.errorMessage.set('');
       this.loading.set(false);
 
@@ -78,21 +82,21 @@ export class Cards {
     });
   }
 
-  showTranslation(): void {
-    this.showAnswer.update(value => !value);
+  flipCard(): void {
+    this.showTranslation.update(value => !value);
   }
 
   nextCard(): void {
     if (this.cardIndex() < this.cards().length - 1) {
       this.cardIndex.update(value => value + 1);
-      this.showAnswer.set(false);
+      this.showTranslation.set(this.initialLanguage() === 'translation');
     }
   }
 
   prevCard(): void {
     if (this.cardIndex() > 0) {
       this.cardIndex.update(value => value - 1);
-      this.showAnswer.set(false);
+      this.showTranslation.set(this.initialLanguage() === 'translation');
     }
   }
 
@@ -102,5 +106,10 @@ export class Cards {
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.lang = 'de-DE';
     speechSynthesis.speak(utterance);
+  }
+
+  protected changeInitialLanguage(language: 'de' | 'translation') {
+    this.initialLanguage.set(language);
+    this.showTranslation.set(language === 'translation');
   }
 }

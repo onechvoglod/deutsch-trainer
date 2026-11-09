@@ -4,13 +4,17 @@ import { LearningTextService } from './learning-text.service';
 import { LearningText } from './learning-text.model';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { Spinner } from '../../shared/components/spinner/spinner';
 
 @Component({
   imports: [
     MatCardModule,
     MatExpansionModule,
     MatIconModule,
-    MatAccordion
+    MatAccordion,
+    MatTabsModule,
+    Spinner
   ],
   selector: 'app-learning-texts',
   styleUrl: './learning-texts.scss',

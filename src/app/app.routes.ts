@@ -1,9 +1,5 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
-import { Cards } from './pages/cards/cards';
-import { NotFound } from './pages/not-found/not-found';
-import { CardCreate } from './pages/card-create/card-create';
-import { LearningTexts } from './pages/learning-texts/learning-texts';
 
 export const routes: Routes = [
     {
@@ -13,22 +9,22 @@ export const routes: Routes = [
     },
     {
         path: 'cards',
-        component: Cards,
+        loadComponent: () => import('./pages/cards/cards').then(m => m.Cards),
         title: 'Lernkarten | Deutsch Trainer',
     },
     {
         path: 'card-create',
-        component: CardCreate,
-        title: 'Neue Karte | Deutsch Trainer ',
+        loadComponent: () => import('./pages/card-create/card-create').then(m => m.CardCreate),
+        title: 'Neue Karte | Deutsch Trainer',
     },
     {
         path: 'learning-texts',
-        component: LearningTexts,
+        loadComponent: () => import('./pages/learning-texts/learning-texts').then(m => m.LearningTexts),
         title: 'Über ein Thema sprechen | Deutsch Trainer',
     },
     {
         path: '**',
-        component: NotFound,
+        loadComponent: () => import('./pages/not-found/not-found').then(m => m.NotFound),
         title: 'Seite nicht gefunden | Deutsch Trainer',
     },
 ];

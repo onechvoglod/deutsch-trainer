@@ -1,5 +1,5 @@
 @if (loading()) {
-<p>Texte werden geladen…</p>
+<app-spinner></app-spinner>
 } @else if (errorMessage()) {
 <p>{{ errorMessage() }}</p>
 } @else {
@@ -17,9 +17,14 @@
                     </span>
                 </mat-panel-title>
             </mat-expansion-panel-header>
-            <p class="learning-texts__text">
-                {{item.text}}
-            </p>
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+                <mat-tab label="Deutsch">
+                    <div class="learning-texts__text">{{ item.text }}</div>
+                </mat-tab>
+                <mat-tab label="Übersetzung">
+                    <div class="learning-texts__text">{{ item.translation }}</div>
+                </mat-tab>
+            </mat-tab-group>
         </mat-expansion-panel>
         } @empty {
         <p>Noch keine Texte vorhanden.</p>
