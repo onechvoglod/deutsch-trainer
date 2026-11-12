@@ -9,6 +9,7 @@ import { firstValueFrom } from 'rxjs';
 import { CardsService } from '../../features/cards/cards.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouterLink } from '@angular/router';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   imports: [
@@ -22,7 +23,8 @@ import { RouterLink } from '@angular/router';
     MatCardActions,
     FormRoot,
     FormField,
-    RouterLink
+    RouterLink,
+    MatProgressSpinnerModule
   ],
   selector: 'app-card-create',
   styleUrl: './card-create.scss',
@@ -88,4 +90,13 @@ export class CardCreate {
       }
     }
   )
+
+  protected resetForm(): void {
+    this.cardForm().reset({
+      de: '',
+      translatedText: '',
+      example: '',
+      exampleTranslation: '',
+    });
+  }
 }

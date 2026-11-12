@@ -69,3 +69,14 @@
 .card-create__required--error {
     color: var(--mat-sys-error);
 }
+
+.card-create__submit {
+    min-width: 140px;
+}
+
+.card-create__submit-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    vertical-align: middle;
+}

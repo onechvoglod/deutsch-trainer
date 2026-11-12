@@ -31,8 +31,19 @@
                     * Pflichtfelder
                 </span>
                 <mat-card-actions class="card-create__actions" align="end">
-                    <button matButton>Abbrechen</button>
-                    <button type="submit" matButton="filled"><mat-icon>add_2</mat-icon> Erstellen</button>
+                    <button type="button" matButton (click)="resetForm()"
+                        [disabled]="cardForm().submitting()">Abbrechen</button>
+                    <button type="submit" class="card-create__submit" matButton="filled"
+                        [disabled]="cardForm().invalid() || cardForm().submitting()">
+                        @if (cardForm().submitting()) {
+                        <mat-spinner [diameter]="20" aria-label="Wird gespeichert" />
+                        } @else {
+                        <span class="card-create__submit-content">
+                            <mat-icon>add_2</mat-icon>
+                            Erstellen
+                        </span>
+                        }
+                    </button>
                 </mat-card-actions>
             </form>
         </mat-card-content>

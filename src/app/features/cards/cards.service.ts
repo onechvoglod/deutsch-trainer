@@ -28,9 +28,9 @@ export class CardsService {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
-                    params: {
-                        pageSize: 20,
-                    },
+                    // params: {
+                    //     pageSize: 100,
+                    // },
                 })
             ),
             map(response =>
