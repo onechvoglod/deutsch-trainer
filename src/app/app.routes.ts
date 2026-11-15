@@ -23,6 +23,11 @@ export const routes: Routes = [
         title: 'Über ein Thema sprechen | Deutsch Trainer',
     },
     {
+        path: 'dialogues',
+        loadComponent: () => import('./pages/dialogues/dialogues').then(m => m.Dialogues),
+        title: 'Dialogues | Deutsch Trainer',
+    },
+    {
         path: '**',
         loadComponent: () => import('./pages/not-found/not-found').then(m => m.NotFound),
         title: 'Seite nicht gefunden | Deutsch Trainer',

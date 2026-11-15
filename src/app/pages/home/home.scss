@@ -56,3 +56,10 @@
     background-color: var(--mat-sys-primary-container);
     color: var(--mat-sys-on-primary-container);
 }
+
+.home-card__topics {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+    text-align: left;
+}
