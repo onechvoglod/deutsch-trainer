@@ -1,1 +1,28 @@
-<p>dialogues works!</p>
+<section class="dialogues">
+    <h1>Dialoge</h1>
+
+    @if (loading()) {
+    <mat-spinner [diameter]="40" aria-label="Dialoge werden geladen" />
+    } @else if (errorMessage()) {
+    <p role="alert">{{ errorMessage() }}</p>
+
+    <button type="button" (click)="loadDialogues()">
+        Erneut versuchen
+    </button>
+    } @else {
+    @for (dialogue of dialogues(); track dialogue.id) {
+    <article class="dialogue">
+        <h2>{{ dialogue.title }}</h2>
+
+        @for (turn of dialogue.turns; track $index) {
+        <p class="dialogue__turn">
+            <strong>{{ turn.speaker }}:</strong>
+            <span [innerHTML]="turn.text | boldText"></span>
+        </p>
+        }
+    </article>
+    } @empty {
+    <p>Noch keine Dialoge vorhanden.</p>
+    }
+    }
+</section>
